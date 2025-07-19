@@ -542,7 +542,46 @@
   <p class="footer__copy">&#169; itzzveer. All rights reserved</p>
 </footer>
 
+<script>
+// Scroll animation
+function onScrollAnimate() {
+  document.querySelectorAll('.scroll-animate').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) {
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', onScrollAnimate);
+window.addEventListener('DOMContentLoaded', onScrollAnimate);
 
+// Stagger animation for education and profile highlights
+document.querySelectorAll('.education__data.scroll-animate').forEach((el, idx) => {
+  el.style.transitionDelay = (idx * 0.15) + 's';
+});
+document.querySelectorAll('.profile__data.scroll-animate').forEach((el, idx) => {
+  el.style.transitionDelay = (idx * 0.15) + 's'; // same as education
+});
+
+// Dark mode toggle
+const toggle = document.getElementById('dark-mode-toggle');
+function setTheme(isDark) {
+  if(isDark){
+    document.body.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️';
+  }else{
+    document.body.removeAttribute('data-theme');
+    toggle.textContent = '🌙';
+  }
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+toggle.addEventListener('click', function() {
+  setTheme(document.body.getAttribute('data-theme') !== 'dark');
+});
+// On load: persist theme
+const isDark = localStorage.getItem('theme') === 'dark';
+setTheme(isDark);
+</script>
 
    <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
