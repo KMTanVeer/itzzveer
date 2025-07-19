@@ -7,16 +7,55 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
 
-<section class="about section" id="about">
-  <h2 class="section-title">About Me</h2>
-  <div class="about__container bd-grid" style="align-items: flex-start;">
+ <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  .animated-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -1;
+    background: linear-gradient(270deg, #ff6ec4, #7873f5, #42e695, #ff6ec4);
+    background-size: 240% 240%;
+    animation: gradientMove 12s ease infinite;
+  }
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Fade-in animation for content */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.4s cubic-bezier(.18,1.25,.90,1.13) forwards;
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style> 
+</head>
+<body>
+ <div class="animated-bg">
+
+<section class="about section fade-in-up" id="about">
+  <h2 class="section-title fade-in-up">About Me</h2>
+  <div class="about__container bd-grid fade-in-up" style="align-items: flex-start;">
     <!-- Profile Photo -->
-    <div class="about__img">
+    <div class="about__img fade-in-up">
       <img src="assets/img/about.jpg" alt="Kawsar Mahmud Tanveer Khan" style="border-radius: 1rem; box-shadow: 0 2px 16px rgba(44,62,80,0.13);">
     </div>
-    <div>
+   <div class="fade-in-up">
       <!-- Brief Introduction -->
       <h2 class="about__subtitle">I'm Kawsar Mahmud Tanveer</h2>
       <p class="about__text" style="margin-bottom:1em;">
@@ -75,4 +114,6 @@
     </div>
   </div>
 </section>
+ </div>
+</body>
 </html>
