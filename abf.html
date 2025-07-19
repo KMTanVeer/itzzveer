@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kawsar Mahmud Tanveer Khan | Portfolio</title>
+  <meta name="description" content="A passionate Electrical and Electronic Engineering student at Daffodil International University.">
+  <meta name="author" content="Kawsar Mahmud Tanveer Khan">
+  <meta name="robots" content="index, follow">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="https://itanveer.tech/assets/img/favicon.ico" type="image/x-icon">
+  <!-- Icons -->
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #222;
+      --secondary-color: #7873f5;
+      --link-color: #657ced;
+      --shadow: 0 3px 12px rgba(120,115,245,0.18);
+      --gradient: linear-gradient(90deg,#7f53ac 30%, #657ced 60%, #43e97b 90%);
+    }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    body[data-theme="dark"] {
+      --bg-color: #18191a;
+      --text-color: #f1f1f1;
+      --secondary-color: #43e97b;
+      --link-color: #43e97b;
+      --shadow: 0 3px 12px rgba(67,233,123,0.10);
+      --gradient: linear-gradient(90deg,#43e97b 10%, #657ced 60%, #7f53ac 90%);
+    }
+    a { color: var(--link-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header & Navbar */
+    .l-header {
+      width: 100%;
+      background: transparent;
+      z-index: 100;
+    }
+    .nav.bd-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      position: relative;
+      padding: 0.6em 1em;
+      background: var(--bg-color);
+    }
+    .nav__logo {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav__menu {
+      flex: 1 1 auto;
+    }
+    .nav__list {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5em;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav__item {}
+    .nav__link {
+      font-weight: 500;
+      color: var(--text-color);
+      padding: 0.4em 0.8em;
+      border-radius: 0.4em;
+      transition: background 0.2s;
+    }
+    .nav__link:hover,.nav__link.active-link { background: #f7f7fc; }
+    body[data-theme="dark"] .nav__link:hover,
+    body[data-theme="dark"] .nav__link.active-link { background: #23243a; }
+
+    /* Hamburger & Dark Mode Button */
+    #dark-mode-toggle {
+      order: 3;
+      margin-left: 0.7em;
+      margin-right: 0.3em;
+      width: 2.6em;
+      height: 2.6em;
+      border-radius: 50%;
+      background: #fff;
+      color: #555;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(120,115,245,0.09);
+      font-size: 1.3em;
+      cursor: pointer;
+      transition: background 0.23s, color 0.23s, box-shadow 0.23s, transform 0.18s;
+      outline: none;
+      position: relative;
+      z-index: 10;
+    }
+    #dark-mode-toggle:hover {
+      background: #f5f5fd;
+      color: var(--secondary-color);
+      transform: scale(1.07) rotate(-7deg);
+      box-shadow: 0 6px 20px rgba(120, 115, 245, .17), 0 3px 16px rgba(67,233,123,0.08);
+    }
+    body[data-theme="dark"] #dark-mode-toggle {
+      background: #23243a;
+      color: #43e97b;
+    }
+    body[data-theme="dark"] #dark-mode-toggle:hover {
+      background: #18191a;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(67,233,123,.14), 0 3px 16px rgba(120,115,245,0.09);
+    }
+    .nav__toggle {
+      order: 4;
+      display: none;
+      font-size: 2em;
+      color: var(--secondary-color);
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 12;
+      margin-left: 0.1em;
+    }
+
+    /* Mobile nav */
+    @media (max-width: 900px) {
+      .nav__list {
+        flex-direction: column;
+        gap: 1.2em;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0.7em 0.7em;
+      }
+      .nav__menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--bg-color);
+        width: 70vw;
+        max-width: 320px;
+        box-shadow: 0 8px 24px rgba(44,62,80,0.07);
+        border-radius: 0 0 1.2em 1.2em;
+        padding: 1em 0.5em;
+        z-index: 999;
+      }
+      .nav__menu.active {
+        display: block;
+        animation: navFadeIn 0.4s;
+      }
+      @keyframes navFadeIn {
+        from { opacity: 0; transform: translateY(-12px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      .nav__toggle {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: none;
+        font-size: 2em;
+      }
+      #dark-mode-toggle {
+        width: 2.1em;
+        height: 2.1em;
+        font-size: 1em;
+        margin-left: 0.2em;
+        margin-right: 0.05em;
+      }
+      .nav__logo { font-size: 1.1em; }
+    }
+    @media (min-width: 901px) {
+      .nav__menu { display: block !important; position: static; background: none; box-shadow: none; border-radius: 0; padding: 0; }
+      .nav__toggle { display: none; }
+    }
+
+    /* Section Titles & Animations */
+    .section-title,
+    .about__subtitle {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: var(--shadow);
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px) scale(0.97);
+      transition: all 0.8s cubic-bezier(.18,1.25,.90,1.13);
+    }
+    .scroll-animate.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* About section simple styling */
+    .about__container {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.5em;
+      margin: 2em 0 2em 0;
+      padding: 0 1em;
+    }
+    .about__img img {
+      width: 120px; height: 120px; object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 2px 16px rgba(44,62,80,0.13);
+    }
+    @media (max-width:600px) {
+      .about__container { flex-direction: column; align-items: center; gap: 1.2em;}
+      .about__img img { width: 100px; height: 100px; }
+    }
+
+    /* Education & Profile Highlights Cards */
+    .education__container,
+    .profile__container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+    }
+    .education__data,
+    .profile__data {
+      display: flex;
+      align-items: flex-start;
+      background: #f7f7fc;
+      padding: 1em 1.5em;
+      border-radius: 1em;
+      box-shadow: 0 2px 8px rgba(100,90,255,0.05);
+      margin-bottom: 0.6em;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 1.5em;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    body[data-theme="dark"] .education__data,
+    body[data-theme="dark"] .profile__data {
+      background: #23243a;
+      box-shadow: 0 2px 8px rgba(67,233,123,0.05);
+    }
+    .education__names,
+    .profile__icon-label {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      min-width: 120px;
+    }
+    .education__icon,
+    .profile__icon {
+      font-size: 2em;
+      background: #fff;
+      border-radius: 50%;
+      padding: 0.45em;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.09);
+      margin-right: 0.3em;
+      transition: background 0.4s;
+    }
+    body[data-theme="dark"] .education__icon,
+    body[data-theme="dark"] .profile__icon {
+      background: #18191a;
+    }
+    .education__degree,
+    .profile__label { font-weight: bold; font-size: 1.09em; }
+    .education__details,
+    .profile__details { font-size: 1em; color: #444; }
+    body[data-theme="dark"] .education__details,
+    body[data-theme="dark"] .profile__details { color: #f1f1f1; }
+    .education__details ul,
+    .profile__details ul { margin: 0; padding-left: 1.2em; }
+    .education__details li,
+    .profile__details li { margin-bottom: 0.2em; }
+    /* Social Icons */
+    .profile__social {
+      display: flex;
+      gap: 0.7em;
+      margin-top: 0.7em;
+    }
+    .profile__social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.4em; height: 2.4em;
+      border-radius: 50%;
+      background: #fff;
+      color: #657ced;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.09);
+      font-size: 1.3em;
+      transition: background 0.25s, color 0.25s, transform 0.18s, border-color 0.18s;
+      border: 2px solid transparent;
+      text-decoration: none;
+      position: relative;
+    }
+    .profile__social-icon:hover {
+      background: linear-gradient(135deg, #657ced 60%, #43e97b 100%);
+      color: #fff;
+      border-color: #657ced;
+      transform: scale(1.11) rotate(-7deg);
+      box-shadow: 0 4px 16px rgba(67, 233, 123, 0.10);
+    }
+    body[data-theme="dark"] .profile__social-icon {
+      background: #18191a;
+      color: #43e97b;
+      border-color: #23243a;
+    }
+    body[data-theme="dark"] .profile__social-icon:hover {
+      background: linear-gradient(135deg, #43e97b 0%, #7f53ac 100%);
+      color: #fff;
+      border-color: #43e97b;
+    }
+    @media (max-width: 600px) {
+      .education__data, .profile__data { flex-direction: column; align-items: flex-start; gap: 0.6em; padding: 1em 0.7em; }
+      .education__names, .profile__icon-label { min-width: unset; }
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 2.5em;
+      padding: 2em 0;
+      text-align: center;
+      background: #f7f7fc;
+      color: #444;
+      font-size: 1em;
+    }
+    body[data-theme="dark"] .footer { background: #23243a; color: #eee; }
+  </style>
+</head>
+<body>
+
+<!--===== HEADER =====-->
+<header class="l-header">
+  <nav class="nav bd-grid">
+    <div>
+      <a href="#" class="nav__logo">Tanveer</a>
+    </div>
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
+        <li class="nav__item"><a href="#profile-highlights" class="nav__link">Highlights</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </div>
+    <button id="dark-mode-toggle" title="Toggle dark mode">🌙</button>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle Navigation">
+      <i class='bx bx-menu'></i>
+    </button>
+  </nav>
+</header> 
+
+<section class="about section" id="about">
+  <h2 class="section-title scroll-animate">About Me</h2>
+  <div class="about__container bd-grid scroll-animate">
+    <div class="about__img">
+      <img src="assets/img/about.jpg" alt="Kawsar Mahmud Tanveer Khan">
+    </div>
+    <div>
+      <h2 class="about__subtitle">I'm Kawsar Mahmud Tanveer</h2>
+      <p class="about__text" style="margin-bottom:1em;">
+        <b>Optimistic | Tech Explorer | EEE Student</b><br>
+        Hi! I’m an enthusiastic Electrical and Electronic Engineering student at Daffodil International University. I’m passionate about embedded systems, IoT, and leveraging technology to solve real-world problems.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!--===== EDUCATION SECTION =====-->
+<section class="education section" id="education">
+  <h2 class="section-title scroll-animate">Education</h2>
+  <div class="education__container bd-grid">
+    <div class="education__data scroll-animate">
+      <div class="education__names">
+        <i class="fa-solid fa-user-graduate education__icon" style="color:#657ced"></i>
+        <span class="education__degree">B.Sc. in EEE</span>
+      </div>
+      <div class="education__details">
+        <span class="education__institute"><b>Daffodil International University</b></span>
+        <span class="education__year">2020 – Present</span>
+        <span class="education__remark">Dean's List, IoT Project Leader</span>
+      </div>
+    </div>
+    <div class="education__data scroll-animate">
+      <div class="education__names">
+        <i class="fa-solid fa-building-columns education__icon" style="color:#43e97b"></i>
+        <span class="education__degree">HSC</span>
+      </div>
+      <div class="education__details">
+        <span class="education__institute"><b>BAF Shaheen College Dhaka</b></span>
+        <span class="education__year">2017 – 2019</span>
+        <span class="education__remark">Science Stream, GPA 5.00</span>
+      </div>
+    </div>
+    <div class="education__data scroll-animate">
+      <div class="education__names">
+        <i class="fa-solid fa-school education__icon" style="color:#ff6ec4"></i>
+        <span class="education__degree">SSC</span>
+      </div>
+      <div class="education__details">
+        <span class="education__institute"><b>Dulai High School, Pabna</b></span>
+        <span class="education__year">2015 – 2017</span>
+        <span class="education__remark">Talent Pool Scholarship</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--===== PROFILE HIGHLIGHTS =====-->
+<section class="profile-highlights section" id="profile-highlights">
+  <h2 class="section-title scroll-animate">Profile Highlights</h2>
+  <div class="profile__container bd-grid">
+    <div class="profile__data scroll-animate">
+      <div class="profile__icon-label">
+        <i class="fa-solid fa-screwdriver-wrench profile__icon" style="color:#657ced"></i>
+        <span class="profile__label"><b>Key Skills</b></span>
+      </div>
+      <div class="profile__details">
+        Embedded Systems, IoT, Programming (C, Python, Arduino), Problem Solving, Teamwork
+      </div>
+    </div>
+    <div class="profile__data scroll-animate">
+      <div class="profile__icon-label">
+        <i class="fa-solid fa-fire profile__icon" style="color:#ff9153"></i>
+        <span class="profile__label"><b>Passions</b></span>
+      </div>
+      <div class="profile__details">
+        Building smart devices, exploring new tech, sharing knowledge
+      </div>
+    </div>
+    <div class="profile__data scroll-animate">
+      <div class="profile__icon-label">
+        <i class="fa-solid fa-trophy profile__icon" style="color:#ffd700"></i>
+        <span class="profile__label"><b>Achievements</b></span>
+      </div>
+      <ul class="profile__details">
+        <li>Smart Home Automation Project</li>
+        <li>IoT Weather Station</li>
+        <li>National Science Fair Finalist</li>
+      </ul>
+    </div>
+    <div class="profile__data scroll-animate">
+      <div class="profile__icon-label">
+        <i class="fa-solid fa-lightbulb profile__icon" style="color:#43e97b"></i>
+        <span class="profile__label"><b>Highlight</b></span>
+      </div>
+      <div class="profile__details">
+        Led a successful team project on real-time IoT monitoring
+      </div>
+    </div>
+    <div class="profile__data scroll-animate">
+      <div class="profile__icon-label">
+        <i class="fa-solid fa-music profile__icon" style="color:#b47cff"></i>
+        <span class="profile__label"><b>Hobbies</b></span>
+      </div>
+      <div class="profile__details">
+        Riding bike, football, traveling, learning new things
+      </div>
+    </div>
+    <div class="profile__data scroll-animate">
+      <div class="profile__icon-label">
+        <i class="fa-solid fa-seedling profile__icon" style="color:#43e97b"></i>
+        <span class="profile__label"><b>Values</b></span>
+      </div>
+      <div class="profile__details">
+        Always stay curious and keep building
+      </div>
+    </div>
+    <div class="profile__data scroll-animate">
+      <div class="profile__icon-label">
+        <i class="fa-solid fa-handshake profile__icon" style="color:#7873f5"></i>
+        <span class="profile__label"><b>Let’s Connect!</b></span>
+      </div>
+      <div class="profile__details">
+        Learn more about my <a href="#education" style="color:var(--link-color);text-decoration:underline;">education</a> below or <a href="#contact" style="color:var(--link-color);text-decoration:underline;">contact me for collaboration</a>.
+        <div class="profile__social">
+          <a href="https://facebook.com/itzzVeer" class="profile__social-icon" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://x.com/itzzveer" class="profile__social-icon" target="_blank" title="Twitter/X">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a href="https://instagram.com/itzzveer" class="profile__social-icon" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/in/KawsarTanveer" class="profile__social-icon" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--===== CONTACT SECTION =====-->
+<section class="contact section" id="contact">
+  <h2 class="section-title scroll-animate">Contact</h2>
+  <div class="contact__container bd-grid">
+    <form action="https://formspree.io/f/xvgqggoz" method="POST" class="contact__form">
+      <input type="text" name="name" placeholder="Name" class="contact__input" required>
+      <input type="email" name="email" placeholder="Email" class="contact__input" required>
+      <textarea name="message" rows="10" class="contact__input" placeholder="Your message" required></textarea>
+      <input type="submit" value="Send" class="contact__button button">
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer__title">Kawsar Mahmud Tanveer Khan</p>
+  <p class="footer__copy">&#169; itzzveer. All rights reserved</p>
+</footer>
+
+<script>
+// Scroll animation
+function onScrollAnimate() {
+  document.querySelectorAll('.scroll-animate').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) {
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', onScrollAnimate);
+window.addEventListener('DOMContentLoaded', onScrollAnimate);
+
+// Stagger animation for education and profile highlights
+document.querySelectorAll('.education__data.scroll-animate').forEach((el, idx) => {
+  el.style.transitionDelay = (idx * 0.15) + 's';
+});
+document.querySelectorAll('.profile__data.scroll-animate').forEach((el, idx) => {
+  el.style.transitionDelay = (idx * 0.15) + 's';
+});
+
+// Dark mode toggle
+const toggle = document.getElementById('dark-mode-toggle');
+function setTheme(isDark) {
+  if(isDark){
+    document.body.setAttribute('data-theme', 'dark');
+    toggle.textContent = '☀️';
+  }else{
+    document.body.removeAttribute('data-theme');
+    toggle.textContent = '🌙';
+  }
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+toggle.addEventListener('click', function() {
+  setTheme(document.body.getAttribute('data-theme') !== 'dark');
+});
+const isDark = localStorage.getItem('theme') === 'dark';
+setTheme(isDark);
+
+// Hamburger menu toggle
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+  });
+}
+</script>
+</body>
+</html>
