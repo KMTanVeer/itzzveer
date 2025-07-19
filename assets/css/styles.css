@@ -494,10 +494,12 @@ img {
   background: #fff;
   border-radius: 50%;
   transition: transform 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s;
-  padding: 16px;
+  padding: 0.35em;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   border: 2px solid transparent;
   position: relative;
+    width: 2.2em;            /* Explicit size for perfect roundness */
+  height: 2.2em;
 }
 
 .contact__social-icon:hover {
