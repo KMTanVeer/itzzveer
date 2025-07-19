@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me | Kawsar Mahmud Tanveer Khan</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .contact__section {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(44,62,80,0.07);
+    }
+    .contact__section h2 {
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+    .contact__section p {
+      text-align: center;
+      margin-bottom: 2em;
+      color: #555;
+    }
+    .contact__info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 2em;
+      margin: 2em 0 0.5em 0;
+      font-size: 1.08em;
+    }
+    .contact__info div {
+      flex: 1 1 200px;
+      min-width: 180px;
+      text-align: center;
+    }
+    .contact__info a {
+      color: #0099ff;
+      text-decoration: none;
+    }
+    .contact__info a:hover {
+      text-decoration: underline;
+    }
+    .contact__form {
+      margin: 0 auto 2em auto;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .contact__form input, .contact__form textarea {
+      padding: 0.75em 1em;
+      border: 1.5px solid #eee;
+      border-radius: 8px;
+      font-size: 1em;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .contact__form input:focus, .contact__form textarea:focus {
+      border-color: #0099ff;
+    }
+    .contact__form input[type="submit"] {
+      background-color: #0099ff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .contact__form input[type="submit"]:hover {
+      background: #005fa3;
+    }
+    .contact__social {
+      text-align: center;
+      margin: 2em 0 0.5em 0;
+    }
+    .contact__social-icon {
+      display: inline-block;
+      margin: 0 15px;
+      font-size: 2.5rem;
+      color: #333;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s, border-color 0.3s;
+      padding: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border: 2px solid transparent;
+      position: relative;
+    }
+    .contact__social-icon:hover {
+      transform: translateY(-6px) scale(1.15);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      border-color: #0099ff;
+      background: #e6f7ff;
+      color: #0099ff;
+    }
+    .contact__social-icon[title="Facebook"]:hover  { color: #1877f3; border-color: #1877f3; background: #e3f0fc; }
+    .contact__social-icon[title="Instagram"]:hover { color: #d6249f; border-color: #d6249f; background: #fce3f9; }
+    .contact__social-icon[title="Twitter/X"]:hover { color: #1da1f2; border-color: #1da1f2; background: #e3f6fc; }
+    .contact__social-icon[title="WhatsApp"]:hover  { color: #25d366; border-color: #25d366; background: #e3fcec; }
+    .contact__social-icon[title="Email"]:hover     { color: #ea4335; border-color: #ea4335; background: #fae3e3; }
+    .contact__map {
+      margin: 2.5em 0 0 0;
+      text-align: center;
+    }
+    .contact__map iframe {
+      width: 100%;
+      max-width: 480px;
+      height: 250px;
+      border: 0;
+      border-radius: 10px;
+    }
+    @media (max-width: 650px) {
+      .contact__section {
+        padding: 1.1rem 0.3rem;
+      }
+      .contact__info {
+        flex-direction: column;
+        gap: 1em;
+      }
+      .contact__social-icon {
+        font-size: 2rem;
+        padding: 12px;
+        margin: 0 8px;
+      }
+      .contact__map iframe { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!--===== HEADER (optional, for navigation) =====-->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div>
+        <a href="index.html" class="nav__logo">Tanveer</a>
+      </div>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="index.html#skills" class="nav__link">Skills</a></li>
+          <li class="nav__item"><a href="index.html#work" class="nav__link">Certificates</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link active-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav__toggle" id="nav-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact__section">
+      <h2>Contact Me</h2>
+      <p>Fill out the form or reach me via the links below.</p>
+      <form action="https://formspree.io/f/xvgqggoz" method="POST" class="contact__form">
+        <input type="text" name="name" placeholder="Name" class="contact__input" required>
+        <input type="email" name="email" placeholder="Email" class="contact__input" required>
+        <textarea name="message" rows="7" class="contact__input" placeholder="Your message" required></textarea>
+        <input type="submit" value="Send" class="contact__button button">
+      </form>
+      <div class="contact__social">
+        <a href="https://www.facebook.com/itzzVeer/" target="_blank" class="contact__social-icon" title="Facebook">
+          <i class='bx bxl-facebook'></i>
+        </a>
+        <a href="https://www.instagram.com/itzzveer/" target="_blank" class="contact__social-icon" title="Instagram">
+          <i class='bx bxl-instagram'></i>
+        </a>
+        <a href="https://x.com/itzzveer" target="_blank" class="contact__social-icon" title="Twitter/X">
+          <i class='bx bxl-twitter'></i>
+        </a>
+        <a href="https://wa.me/01758161680" target="_blank" class="contact__social-icon" title="WhatsApp">
+          <i class='bx bxl-whatsapp'></i>
+        </a>
+        <a href="mailto:ceo@itanveer.tech" class="contact__social-icon" title="Email">
+          <i class='bx bx-envelope'></i>
+        </a>
+      </div>
+      <div class="contact__info">
+        <div>
+          <i class='bx bx-envelope'></i> <a href="mailto:ceo@itanveer.tech">ceo@itanveer.tech</a>
+        </div>
+        <div>
+          <i class='bx bx-phone'></i> <a href="tel:+8801758161680">+880 17 5816 1680</a>
+        </div>
+        <div>
+          <i class='bx bx-map'></i> Daffodil Smart City, Dhaka, Bangladesh
+        </div>
+      </div>
+      <!-- Google Map Embed (optional, update src to your address) -->
+      <div class="contact__map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.954736246821!2d90.32194911543184!3d23.751373294605998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8c3ad3f7e09%3A0xa6e1ae4f5e7f8b7b!2sDaffodil%20International%20University!5e0!3m2!1sen!2sbd!4v1689522467246!5m2!1sen!2sbd" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__title">Kawsar Mahmud Tanveer Khan</p>
+    <div class="footer__social">
+      <a href="https://www.facebook.com/itzzVeer/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+      <a href="https://www.instagram.com/itzzveer/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+      <a href="https://x.com/itzzveer" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+    </div>
+    <p class="footer__copy">&#169; itzzveer. All rights reserved</p>
+  </footer>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
