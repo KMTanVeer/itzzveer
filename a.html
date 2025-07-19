@@ -8,7 +8,8 @@
   <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
- <style>
+ 
+  <style>
   html, body {
     height: 100%;
     margin: 0;
@@ -16,43 +17,56 @@
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-  }
-  .animated-bg {
-    position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    z-index: -1;
-    background: linear-gradient(270deg, #ff6ec4, #7873f5, #42e695, #ff6ec4);
-    background-size: 240% 240%;
-    animation: gradientMove 12s ease infinite;
-  }
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background: #fff;
   }
 
-  /* Fade-in animation for content */
-  .fade-in-up {
+  /* Scroll animation */
+  .scroll-animate {
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1.4s cubic-bezier(.18,1.25,.90,1.13) forwards;
+    transform: translateY(30px) scale(0.97);
+    transition: all 0.8s cubic-bezier(.18,1.25,.90,1.13);
   }
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
-</style> 
+
+  /* Fancy text styles */
+  .section-title,
+  .about__subtitle {
+    background: linear-gradient(90deg, #7f53ac 30%, #657ced 60%, #43e97b 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 12px rgba(120,115,245,0.18);
+  }
+  .about__text, .about__container b, .about__container li, .about__container span {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    color: #222;
+    text-shadow: 0 2px 8px rgba(67,233,123,0.07);
+    font-size: 1.09em;
+  }
+  .about__container ul {
+    padding-left: 1.2em;
+  }
+  .about__container b {
+    color: #7873f5;
+    font-weight: 700;
+  }
+  .about__container li {
+    margin-bottom: 0.25em;
+  }
+</style>
 </head>
 <body>
- <div class="animated-bg">
 
-<section class="about section fade-in-up" id="about">
-  <h2 class="section-title fade-in-up">About Me</h2>
-  <div class="about__container bd-grid fade-in-up" style="align-items: flex-start;">
+<section class="about section" id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about__container bd-grid" style="align-items: flex-start;">
     <!-- Profile Photo -->
-    <div class="about__img fade-in-up">
+    <div class="about__img">
       <img src="assets/img/about.jpg" alt="Kawsar Mahmud Tanveer Khan" style="border-radius: 1rem; box-shadow: 0 2px 16px rgba(44,62,80,0.13);">
     </div>
    <div class="fade-in-up">
@@ -115,5 +129,22 @@
   </div>
 </section>
  </div>
+  <script>
+  // Add scroll-animate class to all main content blocks
+  document.querySelectorAll(
+    '.section-title, .about__container, .about__img, .about__subtitle, .about__text, .about__container > div, .about__container ul'
+  ).forEach(el => el.classList.add('scroll-animate'));
+
+  function onScrollAnimate() {
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        el.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', onScrollAnimate);
+  window.addEventListener('DOMContentLoaded', onScrollAnimate);
+</script>
 </body>
 </html>
