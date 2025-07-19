@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>About | Kawsar Mahmud Tanveer Khan</title>
+  <meta name="description" content="a passionate Electrical and Electronic Engineering student at Daffodil International University. I specialize in embedded systems, IoT, and IT-related technologies, and I love solving real-world problems">
+  <meta name="author" content="Kawsar Mahmud Tanveer Khan">
+  <meta name="robots" content="index, follow">
+
+
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kawsar Mahmud Tanveer Khan – Portfolio">
+  <meta name="twitter:description" content="a passionate Electrical and Electronic Engineering student at Daffodil International University. I specialize in embedded systems, IoT, and IT-related technologies, and I love solving real-world problems">
+  <meta name="twitter:image" content="assets/img/about.png">
+
+  <!-- Favicon -->
+ <link rel="shortcut icon" href="https://itanveer.tech/assets/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://itanveer.tech/assets/img/favicon.ico" type="image/x-icon">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Structured Data for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kawsar Mahmud Tanveer Khan",
+    "url": "https://itanveer.tech",
+    "image": "assets/img/about.png",
+    "jobTitle": "EEE Student",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Daffodil International University"
+    },
+    "sameAs": [
+      "https://facebook.com/itzzveer",
+      "https://github.com/KMTanveer",
+      "https://linkedin.com/in/KawsarTanveer",
+      "https://instagram.com/itzzveer",
+      "https://x.com/itzzveer"
+    ]
+  }
+  </script>
+</head>
+
+    <body>
+<section class="about section" id="about">
+  <h2 class="section-title animate-fadein">About Me</h2>
+  <div class="about__container animate-slidein">
+    <div class="about__img">
+      <img src="assets/img/about.jpg" alt="Kawsar Mahmud Tanveer Khan">
+    </div>
+    <div class="about__content">
+      <h3 class="about__subtitle">Hi, I'm Kawsar Mahmud Tanveer Khan</h3>
+      <p class="about__intro">
+        <b>Electrical & Electronic Engineering Student • Embedded Systems Enthusiast</b>
+      </p>
+      <p>
+        I’m currently pursuing my B.Sc. at <b>Daffodil International University</b> where I specialize in embedded systems, IoT, and IT-related technologies. My passion lies in solving real-world problems—especially those at the intersection of hardware and software.
+      </p>
+      <ul class="about__highlights">
+        <li><b>Key Skills:</b> Embedded Systems, IoT, C/C++, Python, Web Development</li>
+        <li><b>Achievements:</b> National Robotics Competition Finalist, Published IoT Paper</li>
+        <li><b>Projects:</b> Smart Home Automation, IoT-based Health Monitor</li>
+      </ul>
+      <p>
+        Outside of tech, I enjoy <b>photography</b>, exploring new gadgets, and playing chess. I believe in continuous learning and love connecting with people who are passionate about technology and innovation.
+      </p>
+      <p class="about__cta">
+        <a href="#work" class="about__cta-link">Learn more about my work below</a> <br>
+        <a href="#contact" class="about__cta-link">Contact me for collaboration</a>
+      </p>
+      <div class="about__social">
+        <a href="https://www.linkedin.com/in/kawsartanveer/" target="_blank" title="LinkedIn" class="icon-anim"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/KMTanVeer" target="_blank" title="GitHub" class="icon-anim"><i class='bx bxl-github'></i></a>
+        <a href="https://www.instagram.com/itzzveer/" target="_blank" title="Instagram" class="icon-anim"><i class='bx bxl-instagram'></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  // Fade in on scroll for About section
+  function elementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+  function animateAboutSection() {
+    const fadein = document.querySelector('.animate-fadein');
+    const slidein = document.querySelector('.animate-slidein');
+    if (fadein && elementInViewport(fadein)) fadein.style.opacity = 1;
+    if (slidein && elementInViewport(slidein)) slidein.style.opacity = 1;
+  }
+  window.addEventListener('scroll', animateAboutSection);
+  window.addEventListener('load', animateAboutSection);
+</script>
+    </body>
+</html>
