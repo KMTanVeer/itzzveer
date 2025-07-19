@@ -1,0 +1,66 @@
+<section class="about section" id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about__container bd-grid" style="align-items: flex-start;">
+    <!-- Profile Photo -->
+    <div class="about__img">
+      <img src="assets/img/about.jpg" alt="Kawsar Mahmud Tanveer Khan" style="border-radius: 1rem; box-shadow: 0 2px 16px rgba(44,62,80,0.13);">
+    </div>
+    <div>
+      <!-- Brief Introduction -->
+      <h2 class="about__subtitle">I'm Kawsar Mahmud Tanveer</h2>
+      <p class="about__text" style="margin-bottom:1em;">
+        <b>Optimistic | Tech Explorer | EEE Student</b><br>
+        Hi! I’m an enthusiastic Electrical and Electronic Engineering student at Daffodil International University. I’m passionate about embedded systems, IoT, and leveraging technology to solve real-world problems.
+      </p>
+
+      <!-- Educational Background -->
+      <div style="margin-bottom:1.2em;">
+        <b>🎓 Education:</b>
+        <ul style="margin-left:1em; margin-bottom:0;">
+          <li>B.Sc. in EEE, <b>Daffodil International University</b> (current)</li>
+          <li>HSC: <b>Motijheel Model School & College</b>, 2020</li>
+          <li>SSC: <b>Motijheel Model School & College</b>, 2018</li>
+        </ul>
+      </div>
+
+      <!-- Key Skills and Passions -->
+      <div style="margin-bottom:1.2em;">
+        <b>🔧 Key Skills:</b> Embedded Systems, IoT, Programming (C, Python, Arduino), Problem Solving, Teamwork<br>
+        <b>🔥 Passions:</b> Building smart devices, exploring new tech, sharing knowledge
+      </div>
+
+      <!-- Achievements / Highlights -->
+      <div style="margin-bottom:1.2em;">
+        <b>🏆 Achievements:</b>
+        <ul style="margin-left:1em; margin-bottom:0;">
+          <li>Smart Home Automation Project</li>
+          <li>IoT Weather Station</li>
+          <li>National Science Fair Finalist</li>
+        </ul>
+        <b>💡 Highlight:</b> Led a successful team project on real-time IoT monitoring
+      </div>
+
+      <!-- Personal Touch -->
+      <div style="margin-bottom:1.2em;">
+        <b>🎵 Hobbies:</b> Playing guitar, football, traveling, learning new things<br>
+        <b>🌱 Values:</b> Always stay curious and keep building<br>
+        <b>💬 Fun fact:</b> I can code and play the guitar at the same time!
+      </div>
+
+      <!-- Call to Action -->
+      <div style="margin-bottom: 1.2em;">
+        <b>Let’s Connect!</b><br>
+        <span>Learn more about my <a href="#work" style="color:var(--first-color);text-decoration:underline;">work</a> below or <a href="#contact" style="color:var(--first-color);text-decoration:underline;">contact me for collaboration</a>.</span>
+      </div>
+
+      <!-- Social Media / Contact Links -->
+      <div style="margin-top:1.2em;">
+        <a href="https://www.linkedin.com/in/kawsartanveer/" target="_blank" class="contact__social-icon" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/KMTanVeer" target="_blank" class="contact__social-icon" title="GitHub"><i class='bx bxl-github'></i></a>
+        <a href="https://facebook.com/itzzVeer/" target="_blank" class="contact__social-icon" title="Facebook"><i class='bx bxl-facebook'></i></a>
+        <a href="https://instagram.com/itzzveer/" target="_blank" class="contact__social-icon" title="Instagram"><i class='bx bxl-instagram'></i></a>
+        <a href="https://x.com/itzzveer" target="_blank" class="contact__social-icon" title="Twitter/X"><i class='bx bxl-twitter'></i></a>
+      </div>
+    </div>
+  </div>
+</section>
