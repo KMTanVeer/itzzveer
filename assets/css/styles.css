@@ -484,3 +484,32 @@ img {
     width: 450px;
   }
 }
+
+
+.contact__social-icon {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 2.5rem;
+  color: #333;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s;
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.contact__social-icon:hover {
+  transform: translateY(-6px) scale(1.12);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  border-color: #0099ff;
+  background: #e6f7ff;
+  color: #0099ff;
+}
+
+.contact__social-icon[title="Facebook"]:hover  { color: #1877f3; border-color: #1877f3; background: #e3f0fc; }
+.contact__social-icon[title="Instagram"]:hover { color: #d6249f; border-color: #d6249f; background: #fce3f9; }
+.contact__social-icon[title="Twitter/X"]:hover { color: #1da1f2; border-color: #1da1f2; background: #e3f6fc; }
+.contact__social-icon[title="WhatsApp"]:hover  { color: #25d366; border-color: #25d366; background: #e3fcec; }
+.contact__social-icon[title="Email"]:hover     { color: #ea4335; border-color: #ea4335; background: #fae3e3; }
