@@ -115,6 +115,34 @@
       0%, 50% { opacity: 1; }
       51%, 100% { opacity: 0; }
     }
+
+
+    .nav.bd-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Group right-side nav items for better control */
+.nav__menu,
+#dark-mode-toggle,
+.nav__toggle {
+  /* No additional style needed here, but this groups them for clarity */
+}
+
+#dark-mode-toggle {
+  order: 2; /* Makes sure it is before hamburger */
+  margin-right: 20px; /* Adjust this value as needed for spacing */
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s;
+}
+.nav__toggle {
+  order: 3;
+}
   </style>
 </head>
 
