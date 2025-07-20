@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kawsar Mahmud Tanveer Khan | Portfolio</title>
+  <meta name="description" content="A passionate Electrical and Electronic Engineering student at Daffodil International University. I specialize in embedded systems, IoT, and IT-related technologies.">
+  <meta name="author" content="Kawsar Mahmud Tanveer Khan">
+  <meta name="robots" content="index, follow">
+  <link rel="shortcut icon" href="https://itanveer.tech/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="https://itanveer.tech/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    :root { --neon: #39ff14; }
+    html { scroll-behavior: smooth; }
+    body, body * {
+      transition: background 0.5s, color 0.5s, border-color 0.5s;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: #f3f3f3;
+      color: #181818;
+    }
+    body.dark-mode {
+      background: #181818 !important;
+      color: #fafafa !important;
+    }
+    body.dark-mode .l-header,
+    body.dark-mode .footer,
+    body.dark-mode .nav__menu {
+      background: #232323 !important;
+      color: #fafafa !important;
+    }
+    body.dark-mode .section-title,
+    body.dark-mode .button,
+    body.dark-mode .nav__link,
+    body.dark-mode .footer__title,
+    body.dark-mode .nav__logo {
+      color: #fafafa !important;
+    }
+    body.dark-mode .card,
+    body.dark-mode .form-container,
+    body.dark-mode .content,
+    body.dark-mode .skills__data,
+    body.dark-mode .about__container,
+    body.dark-mode .work__container,
+    body.dark-mode .contact__container {
+      background: #222 !important;
+      color: #fafafa !important;
+    }
+    body.dark-mode input,
+    body.dark-mode textarea {
+      background: #181818 !important;
+      color: #fafafa !important;
+      border-color: #333 !important;
+    }
+    body.dark-mode .fa-bars,
+    body.dark-mode .bx-menu,
+    body.dark-mode .footer__icon i,
+    body.dark-mode .home__social-icon i,
+    body.dark-mode .skills__icon {
+      color: #fafafa !important;
+    }
+    .dark-toggle-btn {
+      font-size: 20px;
+      background: none;
+      color: inherit;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, box-shadow 0.2s, text-shadow 0.2s;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: visible;
+    }
+    .dark-toggle-btn.neon,
+    .dark-toggle-btn:hover,
+    .dark-toggle-btn:focus {
+      color: #fff;
+      background: #232323;
+      box-shadow: 0 0 8px var(--neon), 0 0 16px var(--neon);
+      text-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon);
+      animation: neonPulse 0.7s;
+    }
+    @keyframes neonPulse {
+      0%   { box-shadow: 0 0 0 var(--neon);}
+      70%  { box-shadow: 0 0 16px var(--neon);}
+      100% { box-shadow: 0 0 8px var(--neon);}
+    }
+    .splash-effect {
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, #00bfff 60%, transparent 100%);
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.7;
+      animation: splashGrow 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+      z-index: 1000;
+    }
+    @keyframes splashGrow {
+      0%   {transform: translate(-50%, -50%) scale(0.5); opacity: 0.8;}
+      80%  {transform: translate(-50%, -50%) scale(7); opacity: 0.35;}
+      100% {transform: translate(-50%, -50%) scale(10); opacity: 0;}
+    }
+    .typing-cursor {
+      display: inline-block;
+      width: 1ch;
+      animation: blink 0.7s steps(1) infinite;
+      color: #2ecc71;
+      font-weight: bold;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    .nav.bd-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      background: #fff;
+      z-index: 20;
+      position: relative;
+    }
+    .nav__logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #00bfff;
+    }
+    .nav__menu {
+      flex: 1 1 auto;
+    }
+    .nav__list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.2em;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .nav__link {
+      text-decoration: none;
+      color: #181818;
+      font-weight: 500;
+      padding: 0.5em 0.9em;
+      border-radius: 24px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav__link.active-link,
+    .nav__link:hover {
+      background: #00bfff22;
+      color: #00bfff;
+    }
+    .nav__actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav__toggle {
+      width: 32px;
+      height: 32px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 30;
+    }
+    .nav__toggle span {
+      display: block;
+      width: 28px;
+      height: 4px;
+      background: #333;
+      border-radius: 2px;
+      transition: all 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    body.dark-mode .nav__toggle span {
+      background: #fafafa;
+    }
+    .nav__toggle.active span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+    .nav__toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav__toggle.active span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    /* Mobile tweaks for navigation */
+    @media (max-width: 900px) {
+      .nav__toggle { display: flex; }
+      .nav__menu {
+        position: fixed;
+        left: 0; top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(24,24,24,0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-100%);
+        transition: transform .35s cubic-bezier(.68,-0.55,.27,1.55);
+        z-index: 22;
+      }
+      .nav__menu.show-menu {
+        transform: translateY(0);
+      }
+      .nav__list {
+        flex-direction: column;
+        gap: 2em;
+      }
+      .nav__link {
+        font-size: 1.3rem;
+        color: #fff;
+        background: none;
+      }
+      .nav__link.active-link,
+      .nav__link:hover {
+        background: #00bfff33;
+        color: #00bfff;
+      }
+    }
+
+    /* Main content sections */
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin: 2.5em 0 1.3em 0;
+      color: #009acd;
+      letter-spacing: 1px;
+    }
+    .bd-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2em;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
+      padding: 0 1em;
+    }
+    @media (max-width: 900px) {
+      .bd-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+      }
+    }
+    .l-main {
+      min-height: 60vh;
+      padding-bottom: 0;
+    }
+    /* Home Section */
+    .home {
+      min-height: 70vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 1.5em;
+      max-width: 1100px;
+      margin: 0 auto 2em auto;
+      padding: 2em 1em 0 1em;
+    }
+    @media (max-width: 900px) {
+      .home {
+        grid-template-columns: 1fr;
+        padding-top: 4em;
+        gap: 2em;
+      }
+    }
+    .home__title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 0 0 0.7em 0;
+      color: #009acd;
+    }
+    .home__title-color { color: #00bfff; }
+    .button {
+      display: inline-block;
+      padding: 0.7em 2.2em;
+      border-radius: 30px;
+      background: linear-gradient(90deg,#00bfff,#009acd);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border: none;
+      margin-top: 1.4em;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px #00bfff33;
+    }
+    .button:hover {
+      background: linear-gradient(90deg,#009acd,#00bfff);
+      box-shadow: 0 8px 32px #00bfff33;
+    }
+    .home__social {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin: 1.3em 0;
+    }
+    .home__social-icon {
+      font-size: 2em;
+      color: #009acd;
+      transition: color .2s;
+      text-decoration: none;
+    }
+    .home__social-icon:hover { color: #00bfff; }
+    .home__img {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .home__blob {
+      width: 300px;
+      height: 300px;
+      max-width: 95vw;
+      z-index: 1;
+    }
+    .home__blob-img {
+      width: 220px;
+      height: 230px;
+      object-fit: cover;
+    }
+    .water-drop-anim {
+      position: absolute;
+      right: -20px;
+      bottom: 25px;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(145deg, #00bfff 70%, #009acd 100%);
+      border-radius: 60% 40% 65% 35% / 60% 35% 65% 40%;
+      box-shadow: 0 8px 24px 0 #00bfff55;
+      animation: blinkDrop 1.6s infinite cubic-bezier(.68,-0.55,.27,1.55);
+      z-index: 2;
+      opacity: 0.8;
+      filter: blur(0.1px);
+    }
+    @keyframes blinkDrop {
+      0%, 100% { opacity: 0.9; transform: scale(1) rotate(-5deg);}
+      40% { opacity: 0.6; transform: scale(1.12) rotate(-3deg);}
+      70% { opacity: 1;   transform: scale(0.97) rotate(-8deg);}
+    }
+    body.dark-mode .water-drop-anim {
+      background: linear-gradient(145deg, #009acd 65%, #0080ff 100%);
+      box-shadow: 0 8px 24px 0 #0080ff44;
+    }
+    /* Skills/Work/About/Contact Section tweaks */
+    .about__container,
+    .skills__container,
+    .work__container,
+    .contact__container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 24px #00bfff12;
+      padding: 2em;
+      margin-bottom: 2em;
+    }
+    body.dark-mode .about__container,
+    body.dark-mode .skills__container,
+    body.dark-mode .work__container,
+    body.dark-mode .contact__container {
+      background: #232323;
+      box-shadow: 0 2px 24px #009acd33;
+    }
+    .about__img img {
+      width: 180px;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px #009acd33;
+      margin-bottom: 1em;
+    }
+    .about__subtitle {
+      font-size: 1.5rem;
+      color: #00bfff;
+      margin: 0 0 1em 0;
+    }
+    .about__text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    .skills__text {
+      margin-bottom: 1.5em;
+    }
+    .skills__data {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .skills__names {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      min-width: 180px;
+      font-weight: 500;
+    }
+    .skills__icon {
+      font-size: 1.5em;
+    }
+    .skills__bar {
+      flex: 1;
+      height: 8px;
+      background: #00bfff22;
+      border-radius: 8px;
+      margin-left: 1em;
+      margin-right: 1em;
+      position: relative;
+      overflow: hidden;
+    }
+    .skills__percentage {
+      min-width: 45px;
+      text-align: right;
+      font-weight: bold;
+      color: #00bfff;
+    }
+    .work__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.4em;
+      background: none;
+      box-shadow: none;
+      padding: 0;
+      margin-bottom: 2em;
+    }
+    .work__img img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform .25s;
+      box-shadow: 0 2px 16px #0080ff22;
+    }
+    .work__img:hover img {
+      transform: scale(1.06) rotate(-1deg);
+      box-shadow: 0 6px 28px #00bfff44;
+    }
+    .contact__form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .contact__input, .contact__button {
+      border-radius: 20px;
+      border: 1px solid #00bfff44;
+      padding: 0.8em 1.2em;
+      font-size: 1.1em;
+    }
+    .contact__button {
+      background: linear-gradient(90deg,#00bfff,#009acd);
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .contact__button:hover {
+      background: linear-gradient(90deg,#009acd,#00bfff);
+    }
+    /* OCEAN FOOTER WAVES */
+    .ocean-footer {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding-top: 60px;
+      background: transparent;
+      overflow: hidden;
+      color: #fafafa;
+      text-align: center;
+      z-index: 2;
+    }
+    .footer-content {
+      position: relative;
+      z-index: 3;
+      padding-bottom: 44px;
+    }
+    .ocean-waves {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: 120px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .wave {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      fill: #00bfff;
+      opacity: 0.6;
+      animation: waveMove 8s linear infinite;
+    }
+    .wave2 {
+      fill: #009acd;
+      opacity: 0.7;
+      animation: waveMove2 10s linear infinite;
+      top: 10px;
+    }
+    .wave3 {
+      fill: #0080ff;
+      opacity: 0.5;
+      animation: waveMove3 14s linear infinite;
+      top: 20px;
+    }
+    @keyframes waveMove {
+      0% { transform: translateX(0);}
+      100% { transform: translateX(-50%);}
+    }
+    @keyframes waveMove2 {
+      0% { transform: translateX(0);}
+      100% { transform: translateX(-30%);}
+    }
+    @keyframes waveMove3 {
+      0% { transform: translateX(0);}
+      100% { transform: translateX(-70%);}
+    }
+    .footer__title, .footer__copy, .footer__social {
+      color: #fff !important;
+      text-shadow: 0 2px 8px #005a9e88;
+    }
+    .footer__icon i {
+      color: #fff !important;
+      font-size: 24px;
+      margin: 0 6px;
+    }
+  </style>
+</head>
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Tanveer</a>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Certificates</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav__actions">
+                <button id="dark-mode-toggle" aria-label="Toggle Dark Mode" class="dark-toggle-btn">🌙</button>
+                <div class="nav__toggle" id="nav-toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home" id="home">
+            <div class="home__data">
+               <h1 class="home__title" id="typing"></h1>
+                <a href="#about" class="button">Learn More</a>
+            </div>
+            <div>
+              <div class="home__social">
+                  <a href="https://www.linkedin.com/in/kawsartanveer/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                  <a href="https://github.com/KMTanveer" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+              </div>
+              <div class="home__img">
+                  <svg class="home__blob" viewBox="0 0 479 467">
+                      <mask id="mask0" mask-type="alpha">
+                          <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.848 237.401 457.268 297.592 419.412 348.244C380.018 400.607 330.867 446.502 264.347 462.259C199.059 477.749 128.62 464.613 76.8859 418.807C20.2766 368.292 -23.7993 250.121 9.19024 145.964Z"/>
+                      </mask>
+                      <g mask="url(#mask0)">
+                          <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.848 237.401 457.268 297.592 419.412 348.244C380.018 400.607 330.867 446.502 264.347 462.259C199.059 477.749 128.62 464.613 76.8859 418.807C20.2766 368.292 -23.7993 250.121 9.19024 145.964Z"/>
+                          <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png"/>
+                      </g>
+                  </svg>
+                  <div class="water-drop-anim"></div>
+              </div>
+            </div>
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section" id="about">
+            <h2 class="section-title">About</h2>
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="assets/img/about.jpg" alt="Kawsar Mahmud Tanveer Khan">
+                </div>
+                <div>
+                    <h2 class="about__subtitle">I'm Kawsar Mahmud Tanveer</h2>
+                    <p class="about__text"><b>an optimistic human being.</b><br>
+                        A passionate Electrical and Electronic Engineering student at Daffodil International University.
+                        I specialize in embedded systems, IoT, and IT-related technologies, and I love solving real-world problems especially in these fields. Always eager to grow, I actively seek out learning opportunities and embrace challenges with enthusiasm. Let's connect and create something impactful together!
+                    </p>
+                </div>                                   
+            </div>
+        </section>
+
+        <!--===== SKILLS =====-->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills__container bd-grid">          
+                <div>
+                    <h2 class="skills__subtitle"></h2>
+                    <p class="skills__text">As an Electrical and Electronic Engineering student passionate about IT and innovation, I enjoy bridging hardware and software. I’ve worked on embedded systems, IoT, and IT projects, and love learning new tech and solving real-world problems.</p>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                           <i class="fa-solid fa-file-word skills__icon" style="color:#2B579A"></i>
+                           <span class="skills__name">MS Word</span>
+                        </div>
+                        <div class="skills__bar skills__html"></div>
+                        <div>
+                            <span class="skills__percentage">95%</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                           <i class="fa-solid fa-file-powerpoint skills__icon" style="color:#D24726"></i>
+                           <span class="skills__name">MS PowerPoint</span>
+                        </div>
+                        <div class="skills__bar skills__css"></div>
+                        <div>
+                            <span class="skills__percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                           <i class='bx bx-brain skills__icon'></i>
+                           <span class="skills__name">Problem Solving</span>
+                        </div>
+                        <div class="skills__bar skills__js"></div>
+                        <div>
+                            <span class="skills__percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-group skills__icon'></i>
+                            <span class="skills__name">Teamwork & Collaboration</span>
+                        </div>
+                        <div class="skills__bar skills__ux"></div>
+                        <div>
+                            <span class="skills__percentage">85%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== WORK =====-->
+        <section class="work section" id="work">
+            <h2 class="section-title">Certificates</h2>
+            <div class="work__container bd-grid">
+                <a href="#" class="work__img">
+                    <img src="assets/img/work1.jpeg" alt="itzzveer">
+                </a>
+                <a href="#" class="work__img">
+                    <img src="assets/img/work2.jpg" alt="itzzveer">
+                </a>
+                <a href="#" class="work__img">
+                    <img src="assets/img/work3.jpg" alt="itzzveer">
+                </a>
+                <a href="#" class="work__img">
+                    <img src="assets/img/work4.jpg" alt="">
+                </a>
+                <a href="#" class="work__img">
+                    <img src="assets/img/work5.jpg" alt="">
+                </a>
+                <a href="#" class="work__img">
+                    <img src="assets/img/work6.jpg" alt="">
+                </a>
+            </div>
+        </section>
+
+        <!--===== CONTACT =====-->
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact__container bd-grid">
+              <form action="https://formspree.io/f/xvgqggoz" method="POST" class="contact__form">
+                <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                <textarea name="message" rows="10" class="contact__input" placeholder="Your message" required></textarea>
+                <input type="submit" value="Send" class="contact__button button">
+              </form>
+            </div>
+        </section>
+    </main>
+
+    <!--===== OCEAN WAVE FOOTER =====-->
+    <footer class="footer ocean-footer">
+      <div class="ocean-waves">
+        <svg class="wave wave1" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,40 Q360,120 720,40 T1440,60 V120H0Z"></path>
+        </svg>
+        <svg class="wave wave2" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,60 Q360,0 720,60 T1440,40 V120H0Z"></path>
+        </svg>
+        <svg class="wave wave3" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,80 Q360,60 720,80 T1440,100 V120H0Z"></path>
+        </svg>
+      </div>
+      <div class="footer-content">
+        <p class="footer__title">Kawsar Mahmud Tanveer Khan</p>
+        <div class="footer__social">
+            <a href="https://www.facebook.com/itzzVeer/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+            <a href="https://www.instagram.com/itzzveer/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+            <a href="https://x.com/itzzveer" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+        </div>
+        <p class="footer__copy">&#169; itzzveer. All rights reserved</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Hamburger animation & menu toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      navToggle.onclick = function() {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('show-menu');
+      };
+      document.querySelectorAll('.nav__menu .nav__link').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navMenu.classList.contains('show-menu')) {
+            navMenu.classList.remove('show-menu');
+            navToggle.classList.remove('active');
+          }
+        });
+      });
+
+      // Neon dark mode toggle with splash and soft transition
+      const toggle = document.getElementById('dark-mode-toggle');
+      const body = document.body;
+      function updateIcon() {
+        toggle.textContent = body.classList.contains('dark-mode') ? "☀️" : "🌙";
+      }
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+      }
+      updateIcon();
+      toggle.addEventListener('click', (e) => {
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+        updateIcon();
+        // Neon pulse
+        toggle.classList.add('neon');
+        setTimeout(() => toggle.classList.remove('neon'), 700);
+        // Splash effect
+        const splash = document.createElement('span');
+        splash.className = 'splash-effect';
+        toggle.appendChild(splash);
+        setTimeout(() => splash.remove(), 700);
+      });
+
+      // Typing effect with HTML support and cursor
+      const text = `Hi,<br>I'm <span class="home__title-color">Tanveer</span><br>Tech Explorer`;
+      const target = document.getElementById('typing');
+      let i = 0, isTag = false;
+      function typeLetter() {
+        let current = text.slice(0, i);
+        target.innerHTML = current + '<span class="typing-cursor">|</span>';
+        if (i < text.length) {
+          if (text[i] === "<") isTag = true;
+          if (text[i] === ">") isTag = false;
+          i++;
+          setTimeout(typeLetter, isTag ? 0 : 90);
+        }
+      }
+      typeLetter();
+    </script>
+</body>
+</html>
