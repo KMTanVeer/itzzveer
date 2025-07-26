@@ -516,3 +516,18 @@ img {
 .contact__social-icon[title="WhatsApp"]:hover  { color: #25d366; border-color: #25d366; background: #e3fcec; }
 .contact__social-icon[title="Email"]:hover     { color: #ea4335; border-color: #ea4335; background: #fae3e3; }
 
+/* Particles */
+
+/*===== PARTICLES =====*/
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: 0;
+}
+.home.bd-grid {
+  position: relative;
+  overflow: hidden;
+}
